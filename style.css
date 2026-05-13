@@ -285,6 +285,40 @@ kbd {
   border-color: #7aa2f7;
 }
 
+/* ---- Skin selector ---- */
+.skin-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.skin-btn {
+  background: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  border-radius: 4px;
+  padding: 5px 4px;
+  font-size: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--kbd-text);
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.skin-btn[data-skin="retro"] { border-left: 3px solid #4dd0e1; }
+.skin-btn[data-skin="neon"]  { border-left: 3px solid #00ffff; }
+.skin-btn[data-skin="pastel"]{ border-left: 3px solid #dda0dd; }
+.skin-btn[data-skin="pixel"] { border-left: 3px solid #ffd54f; }
+
+.skin-btn:hover { border-color: #7aa2f7; color: #7aa2f7; }
+
+.skin-btn.active {
+  background: #7aa2f7;
+  color: #0f0f17;
+  border-color: #7aa2f7;
+}
+
 .pause-btn.primary:hover {
   background: #9bbdff;
   border-color: #9bbdff;
@@ -360,4 +394,101 @@ kbd {
   align-items: center;
   gap: 4px;
   transition: color 0.25s;
+}
+
+/* ---- Skin: Neon ---- */
+body.skin-neon {
+  --bg: #000008;
+  --text: #00ccff;
+  --canvas-bg: #000005;
+  --border: #001144;
+  --grid-line: #04040f;
+  --label: #005588;
+  --controls-text: #006699;
+  --kbd-bg: #000a1a;
+  --kbd-border: #002244;
+  --kbd-text: #0088cc;
+  --overlay-bg: rgba(0, 0, 20, 0.88);
+}
+
+body.skin-neon .game-title {
+  color: #00ffff;
+  text-shadow: 0 0 20px rgba(0,255,255,0.8), 0 0 40px rgba(0,200,255,0.4);
+}
+
+body.skin-neon .value { color: #00ffff; }
+body.skin-neon #overlay-score { color: #00ffff; }
+body.skin-neon #restart-btn { background: #00ccff; color: #000010; }
+body.skin-neon #restart-btn:hover { background: #44eeff; }
+
+body.skin-neon .skin-btn.active {
+  background: #00ccff;
+  color: #000010;
+  border-color: #00ccff;
+}
+
+/* ---- Skin: Pastel ---- */
+body.skin-pastel {
+  --bg: #f5eeff;
+  --text: #5a3a7a;
+  --canvas-bg: #faf6ff;
+  --border: #d8c0f0;
+  --grid-line: #ead8f8;
+  --label: #9070b0;
+  --controls-text: #7050a0;
+  --kbd-bg: #ede0ff;
+  --kbd-border: #c0a0e0;
+  --kbd-text: #6040a0;
+  --overlay-bg: rgba(220, 200, 240, 0.88);
+}
+
+body.skin-pastel .game-title {
+  color: #b060d0;
+  text-shadow: 0 0 20px rgba(180,80,200,0.3);
+}
+
+body.skin-pastel .value { color: #b060d0; }
+body.skin-pastel #overlay-score { color: #b060d0; }
+body.skin-pastel #overlay-title { color: #e06080; }
+body.skin-pastel #restart-btn { background: #c090e0; color: #fff; }
+body.skin-pastel #restart-btn:hover { background: #d8aaff; }
+
+body.skin-pastel .skin-btn.active {
+  background: #c090e0;
+  color: #fff;
+  border-color: #c090e0;
+}
+
+/* ---- Skin: Pixel ---- */
+body.skin-pixel {
+  --bg: #1a1200;
+  --text: #ddaa00;
+  --canvas-bg: #0e0900;
+  --border: #3a2800;
+  --grid-line: #160f00;
+  --label: #886600;
+  --controls-text: #aa8800;
+  --kbd-bg: #1a1200;
+  --kbd-border: #4a3800;
+  --kbd-text: #cc9900;
+  --overlay-bg: rgba(10, 8, 0, 0.88);
+}
+
+body.skin-pixel .game-title {
+  color: #ffcc00;
+  text-shadow: none;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+}
+
+body.skin-pixel .value { color: #ffcc00; }
+body.skin-pixel #overlay-score { color: #ffcc00; }
+body.skin-pixel #overlay-title { color: #ff6600; }
+body.skin-pixel #restart-btn { background: #ddaa00; color: #0a0800; }
+body.skin-pixel #restart-btn:hover { background: #ffcc00; }
+
+body.skin-pixel .skin-btn.active {
+  background: #ddaa00;
+  color: #0a0800;
+  border-color: #ddaa00;
 }
